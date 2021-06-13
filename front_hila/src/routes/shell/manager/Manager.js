@@ -138,7 +138,7 @@ export const Manager = (props) => {
                         <FormItem>
                             <Button id="pending_users" className={"list-btn"}
                                 onClick={() => viewPendings(props.userSession)}
-                                type="primary" shape="round" color="Black" style={{ backroundColor: "#1980ff" }}
+                                type="secondary" shape="round" color="Black" style={{ backroundColor: "#1980ff" }}
                                 variant="contained" size="large">
                                 רשימת אנשי צוות בהמתנה
                         </Button>
