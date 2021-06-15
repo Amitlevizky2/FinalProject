@@ -22,8 +22,8 @@ export const getAllSoldiers_Volunteers = (api_key) => {
     return client.get(`${getUrl}${urlParams}`)
 };
 
-export const deleteSolANDVol = (email, api_key) => {
-    var urlParams = `entity=Contact&action=delete&json={"sequential":1,email:${email}}&api_key=${api_key}&key=${site_key}`;
+export const deleteSolANDVol = (id, api_key) => {
+    var urlParams = `entity=Contact&action=delete&json={"id":${id}}&api_key=${api_key}&key=${site_key}`;
     return client.post(`${postUrl}${urlParams}`)
 };
 

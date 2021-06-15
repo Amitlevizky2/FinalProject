@@ -221,7 +221,7 @@ export const Staff = (props) => {
     const DeleteSolANDVol = async (contact, userSession) => {
         var Message = ""
         console.log("the details are: ", contact.email, userSession.Data?.API_KEY);
-        const viewSolANDSol = await deleteSolANDVol(contact.email, userSession.Data?.API_KEY);
+        const viewSolANDSol = await deleteSolANDVol(contact.id, userSession.Data?.API_KEY);
         //  let res = viewSolANDSol.data?.values[0]
         //console.log("after API delete- res: ", res);
         if (viewSolANDSol.data.is_error === 1) {
