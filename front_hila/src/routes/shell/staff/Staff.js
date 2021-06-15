@@ -225,10 +225,15 @@ export const Staff = (props) => {
         //  let res = viewSolANDSol.data?.values[0]
         //console.log("after API delete- res: ", res);
         if (viewSolANDSol.data.is_error === 1) {
+
             Message = "unable to delete Contact"
+            alert("שגיאה: המשתמש לא נמחק")
         } else {
+            alert("המשתמש נמחק בהצלחה")
+
             Message = "Successfully delete contact"
         }
+        window.location.reload();
         console.log("check if works");
         console.log(Message);
         //  getSoldiersAndVolunteers(props.Data?.API_KEY);
