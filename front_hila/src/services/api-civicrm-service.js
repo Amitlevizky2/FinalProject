@@ -23,7 +23,7 @@ export const getAllSoldiers_Volunteers = (api_key) => {
 };
 
 export const deleteSolANDVol = (email, api_key) => {
-    var urlParams = `entity=Contact&action=delete&json={"sequential":1,email:${email}, "contact_sub_type":["Soldier","Volunteer"]}&api_key=${api_key}&key=${site_key}`;
+    var urlParams = `entity=Contact&action=delete&json={"sequential":1,email:${email}}&api_key=${api_key}&key=${site_key}`;
     return client.post(`${postUrl}${urlParams}`)
 };
 

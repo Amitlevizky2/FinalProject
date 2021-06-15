@@ -218,16 +218,18 @@ export const Staff = (props) => {
         setIsModalVisibleSolANDVols(true);
     };
 
-    const DeleteSolANDVol = async (props) => {
+    const DeleteSolANDVol = async (contact, userSession) => {
         var Message = ""
-        const viewSolANDSol = await deleteSolANDVol(props.email, props.Data?.API_KEY);
-        console.log("after API delete");
+        console.log("the details are: ", contact.email, userSession.Data?.API_KEY);
+        const viewSolANDSol = await deleteSolANDVol(contact.email, userSession.Data?.API_KEY);
+        //  let res = viewSolANDSol.data?.values[0]
+        //console.log("after API delete- res: ", res);
         if (viewSolANDSol.data.is_error === 1) {
             Message = "unable to delete Contact"
         } else {
             Message = "Successfully delete contact"
         }
-        console.log("after API delete");
+        console.log("check if works");
         console.log(Message);
         //  getSoldiersAndVolunteers(props.Data?.API_KEY);
     };
@@ -433,7 +435,7 @@ export const Staff = (props) => {
                                                 <div >
                                                     <h4>{`שם המתנדב : ${x.display_name} `}</h4>
                                                     <h4>{`שם המתנדב : ${x.email} `}</h4>
-                                                    <Button id='close_app' onClick={() => DeleteSolANDVol(x.email, props.userSession, props.startSession)} type="secondary" shape="round"
+                                                    <Button id='close_app' onClick={() => DeleteSolANDVol(x, props.userSession, props.startSession)} type="secondary" shape="round"
                                                         color="secondary"
                                                         variant="contained"
                                                         size="medium">
