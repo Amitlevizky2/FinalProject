@@ -94,21 +94,21 @@ export const getAllUnconfirmEvents = (api_key) => {
 
 export const getAllOpenEvents = (api_key) => {
     var urlParams = `entity=Event&action=get&json={"sequential":1,"is_map":0, "is_active":0, "options":{"limit":300}}&api_key=${api_key}&key=${site_key}`;
-    return client.get(`${updateUrl}${urlParams}`)
+    return client.get(`${getUrl}${urlParams}`)
 };
 
 export const getAllHandleEvents = (api_key) => {
     var urlParams = `entity=Event&action=get&json={"sequential":1, "is_map":0 ,"is_confirm_enabled":1, "options":{"limit":300}}&api_key=${api_key}&key=${site_key}`;
-    return client.get(`${updateUrl}${urlParams}`)
+    return client.get(`${getUrl}${urlParams}`)
 };
 
 export const getAllClosedEvents = (api_key) => {
     var urlParams = `entity=Event&action=get&json={"sequential":1, "is_map":1, "options":{"limit":300}}&api_key=${api_key}&key=${site_key}`;
+    return client.get(`${getUrl}${urlParams}`)
 };
 
 export const sendApplication = (api_key, event_type, event_title, event_description, summary, today) => {
     var urlParams = `entity=Event&action=create&json={"event_type_id":\"${event_type}\", "is_map":0, "default_role_id":\"Soldier\","participant_listing_id":\"Name and Email\","title":\"${event_title}\","summary":\"${summary}\","description":\"${event_description}\","start_date":\"${today}\","is_active":\"0\", "is_confirm_enabled":0, "max_additional_participants":\"2\"}&api_key=${api_key}&key=${site_key}`;
-    console.log("event_type", today)
     return client.post(`${postUrl}${urlParams}`)
 };
 
