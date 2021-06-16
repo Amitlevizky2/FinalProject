@@ -26,6 +26,7 @@ const SOLDIER_TEMPLATE_ID = 71;
 const CONFIRMATION_TAMPLATE_ID = 72;
 const CANCLE_TAMPLATE_ID = 73;
 
+
 const useStyle = makeStyles(theme => ({
     container: {
         display: 'flex',
