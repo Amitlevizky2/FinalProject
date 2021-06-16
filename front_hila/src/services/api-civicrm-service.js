@@ -155,7 +155,7 @@ export const getContactAddress = (api_key, contact_id) => {
 
 
 export const CreateTemplate = (api_key, msg_text, msg_html) => {
-    var urlParams = `entity=MessageTemplate&action=Create&json={"msg_title":"Application Details","msg_subject":"Confirmation and application details","msg_text":\"${msg_text}\","msg_html":\"${msg_html}\","is_active":1}&api_key=${api_key}&key=${site_key}`;
+    var urlParams = `entity=MessageTemplate&action=Create&json={"msg_title":"Application Details","msg_subject":"Confirmation and application details", "msg_html":\"${msg_html}\","is_active":1}&api_key=${api_key}&key=${site_key}`;
     return client.post(`${postUrl}${urlParams}`)
 };
 
