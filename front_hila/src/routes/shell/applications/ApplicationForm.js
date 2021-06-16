@@ -20,6 +20,7 @@ const handleApplication = async ({title, summary, description}, userSession) => 
         event_type: title
     };
 
+    console.log(details.event_title)
     const sendRes = await sendApplication(details.api_key, details.event_title, details.event_type, details.event_description, summary, _date + " " + _hour);
     let keys = Object.keys(sendRes.data.values)
     console.log("keys[0]",keys)
@@ -39,10 +40,12 @@ const ApplicationForm = props => {
                 <h3>נושא הפנייה:</h3>
                 <Form.Item
                     name="title" className="login-from input" rules={[{required: false, message: 'יש לבחור סוג פניה'}]}>
-                    <select class = "selector" id = "app_subject" placeholder="נושא" allowClear>
+                    <select class = "selector" id = "app_subject" placeholder="נושא" allowClear required>
+                            <option selected="selected" disabled="disabled" value="">  אנא בחר את סוג הפנייה </option>
                         {
                             Object.keys(applicationTypes).map(key =>
                                 <option key={key} value={key}>{applicationTypes[key]}</option>)
+                            
                         }
                     </select>
                 </Form.Item>
